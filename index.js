@@ -4,9 +4,14 @@ const cors = require("cors");
 const nhaccuatuiApi = require("nhaccuatui-api");
 
 const app = express();
-app.use(bodyParser.json());
-app.use(cors()); 
 
+// Middleware
+app.use(bodyParser.json()); // For parsing JSON
+app.use(cors()); // Enable CORS
+
+// API Endpoints
+
+// Get home data
 app.get("/get-home", async (req, res) => {
   try {
     const data = await nhaccuatuiApi.getHome();
