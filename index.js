@@ -10,8 +10,10 @@ app.use(bodyParser.json()); // For parsing JSON
 app.use(cors()); // Enable CORS
 
 // API Endpoints
+app.get("/", (req, res) => {
+    res.send("Hello World");
+  });
 
-// Get home data
 app.get("/get-home", async (req, res) => {
   try {
     const data = await nhaccuatuiApi.getHome();
